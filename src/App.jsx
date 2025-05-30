@@ -1,10 +1,18 @@
-function App() {
+import Navbar from './components/Navbar'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Notas from './pages/Notas'
+import Economia from './pages/Economia'
+
+export default function App() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-900">
-      <h1 className="text-4xl font-bold mb-4 text-blue-600">Tándem</h1>
-      <p className="text-lg">Tu agenda personal para notas y economía</p>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/notas" element={<Notas />} />
+        <Route path="/economia" element={<Economia />} />
+      </Routes>
+    </>
   )
 }
-
-export default App
